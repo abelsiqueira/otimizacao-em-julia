@@ -1,3 +1,7 @@
+<p>
+  <img align='right' src="otim-em-julia.jpg">
+</p>
+
 # Otimização em Julia
 
 Repositório com material de aula, cursos e tutoriais de Otimização em Julia.
