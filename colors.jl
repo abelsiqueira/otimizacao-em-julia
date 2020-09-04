@@ -1,0 +1,1 @@
+const color_gradient_list = [:white, :blue, :purple, :purple, :red, :green, :green]
