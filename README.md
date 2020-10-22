@@ -6,6 +6,8 @@
 
 Repositório com material de aula, cursos e tutoriais de Otimização em Julia.
 
+- Playlist do Youtube: https://www.youtube.com/playlist?list=PLOOY0eChA1uyk_01nGJVmcQGvcJq9h6_6
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/abelsiqueira/otimizacao-em-julia/main)
 
 ## Licença de uso
