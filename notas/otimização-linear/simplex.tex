@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm,amsmath}
+
+\usepackage{algorithm,algpseudocode}
+
+\author{Abel Soares Siqueira}
+\title{Método Simplex - Descrição Básica}
+\date{Última atualização 2021/Fev/15 \\ CC-BY-SA}
+
+\begin{document}
+  \maketitle
+
+  \begin{algorithm}
+    \caption{Simplex (uma iteração)}
+    \begin{algorithmic}[1]
+      \State Dado $x$ solução básica factível, com base $B$ e não-base $N$.
+      % \State Defina $k = 0$
+      \State Calcule $y$ resolvendo $B^T y = c_B$.
+      \State Calcule $\bar{c} = c - A^T y$.
+      \State Se $\bar{c} \geq 0$, TERMINE com $x^* = x$ solução ótima.
+      \State Escolha $j$ tal que $\bar{c}_j < 0$.
+      \State Calcule $d$ tal que
+        \begin{align*}
+          d_j & = 1 \\
+          B d_B & = A_j \\
+          d_i & = 0, \quad \forall i \in N-\{j\}.
+        \end{align*}
+      \State Se $d \geq 0$, TERMINE com o problema ilimitado na direção $d$.
+      \State Calcule $\displaystyle k = \arg\min_{i: d_i < 0} \frac{-x_i}{d_i}$.
+      \State Defina $\theta = \dfrac{-x_k}{d_k}$.
+      \State Calcule $x = x + \theta d$, que equivale a
+      \begin{align*}
+        x_B & \leftarrow x_B + \theta d_B \\
+        x_k & \leftarrow 0 \\
+        x_j & \leftarrow \theta \\
+        x_i & \quad \text{continua valendo } 0, \quad \forall i \in N-\{j\}.
+      \end{align*}
+      \State Remova $k$ de $B$ e adicione em $N$.
+      \State Remova $j$ de $N$ e adicione em $B$.
+    \end{algorithmic}
+  \end{algorithm}
+
+\end{document}
